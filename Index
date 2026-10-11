@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishi | Finance & Business Development</title>
+  <meta name="description" content="Portfolio of Rishi, Finance student at Rutgers Business School concentrating in Real Estate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14213d;
+      --ink-soft: #3d4a66;
+      --muted: #6b7489;
+      --paper: #f8f5ef;
+      --card: #ffffff;
+      --line: #e4ded2;
+      --accent: #c8102e;      /* Rutgers scarlet */
+      --accent-soft: #fbe9ec;
+      --radius: 14px;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(248, 245, 239, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.3rem; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul a { text-decoration: none; font-size: 0.95rem; font-weight: 500; color: var(--ink-soft); }
+    nav ul a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero { padding: 110px 0 90px; }
+    .eyebrow {
+      display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: "Fraunces", serif; font-weight: 500;
+      font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.18; max-width: 880px;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-meta { margin-top: 28px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.95rem; }
+    .btns { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 999px; text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; border: 1.5px solid var(--ink); transition: all .2s;
+    }
+    .btn.primary { background: var(--ink); color: #fff; }
+    .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+
+    /* SECTIONS */
+    section { padding: 80px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 40px; }
+    .section-head .num { font-family: "Fraunces", serif; color: var(--accent); font-size: 1rem; }
+    .section-head h2 { font-family: "Fraunces", serif; font-weight: 600; font-size: 2.1rem; }
+    .section-head p { color: var(--muted); max-width: 620px; margin-top: 6px; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .skill-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px;
+    }
+    .skill-card h3 { font-size: 1.05rem; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .skill-card h3 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .tags li {
+      background: var(--accent-soft); color: var(--ink); font-size: 0.85rem; font-weight: 500;
+      padding: 5px 12px; border-radius: 999px;
+    }
+
+    /* PROJECTS */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .project {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 30px; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s;
+    }
+    .project:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(20, 33, 61, 0.08); }
+    .project .type { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+    .project h3 { font-family: "Fraunces", serif; font-size: 1.45rem; margin: 6px 0 12px; }
+    .project p { color: var(--ink-soft); font-size: 0.97rem; flex-grow: 1; }
+    .project .stack { margin: 18px 0; font-size: 0.85rem; color: var(--muted); }
+    .project .links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .project .links a { font-weight: 600; font-size: 0.92rem; text-decoration: none; border-bottom: 2px solid var(--accent); }
+    .project .links .note { font-size: 0.88rem; color: var(--muted); font-style: italic; }
+
+    /* CONTACT / FOOTER */
+    .contact { text-align: center; }
+    .contact h2 { font-family: "Fraunces", serif; font-size: 2.1rem; margin-bottom: 10px; }
+    .contact p { color: var(--muted); margin-bottom: 28px; }
+    .contact .btns { justify-content: center; }
+    footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      nav ul { gap: 16px; }
+      nav ul li.hide-sm { display: none; }
+      .hero { padding: 70px 0 60px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#top" class="logo">Rishi<span>.</span></a>
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li class="hide-sm"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PERSONAL STATEMENT -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow">Personal Statement</span>
+      <h1>I'm a Rutgers Business School finance student concentrating in real estate who pairs <em>hands-on business development experience</em> with a builder's instinct for AI-powered tools.</h1>
+      <div class="hero-meta">
+        <span>📍 Albany, NY &amp; New Brunswick, NJ</span>
+        <span>🎓 B.S. Finance, Real Estate Concentration</span>
+        <span>💼 BD Intern, Cloud and Things</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Skills</h2>
+        <p>A mix of financial grounding, client-facing business development, and the technical skills to build my own tools.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><span class="dot"></span>Finance &amp; Markets</h3>
+          <ul class="tags">
+            <li>Corporate Finance</li>
+            <li>Real Estate Fundamentals</li>
+            <li>Options &amp; Markets</li>
+            <li>Risk Analysis</li>
+            <li>Financial Statements</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot"></span>Business Development</h3>
+          <ul class="tags">
+            <li>Competitive Intelligence</li>
+            <li>RFP / Bid Analysis</li>
+            <li>Client Meeting Prep</li>
+            <li>Market Research</li>
+            <li>Sales Strategy</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot"></span>Technical</h3>
+          <ul class="tags">
+            <li>JavaScript</li>
+            <li>React + Vite</li>
+            <li>HTML / CSS</li>
+            <li>Git &amp; GitHub</li>
+            <li>Vercel</li>
+            <li>AI / LLM Prompting</li>
+            <li>PowerPoint Automation</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3><span class="dot"></span>Leadership &amp; Certifications</h3>
+          <ul class="tags">
+            <li>Founder, Youth Gujarati Samaj</li>
+            <li>Team Leadership (250-camper camp)</li>
+            <li>HubSpot Inbound Sales</li>
+            <li>HubSpot Sales Hub</li>
+            <li>Goldman Sachs Risk Simulation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>Projects</h2>
+        <p>Selected work from my internship, my own builds, and the community I've led.</p>
+      </div>
+      <div class="projects">
+
+        <article class="project">
+          <span class="type">Web App · Personal Build</span>
+          <h3>Groundwork</h3>
+          <p>An AI-powered goal-coaching app that turns long-term goals into daily activities. It calibrates difficulty to the user and keeps them motivated with a track-and-field theme: distance milestones, medals, and streaks.</p>
+          <div class="stack">React · Vite · Vercel serverless proxy · LLM API</div>
+          <div class="links">
+            <a href="https://GROUNDWORK-LIVE-URL" target="_blank" rel="noopener">Live demo →</a>
+            <a href="https://github.com/YOUR-USERNAME/groundwork" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="type">Internship · Cloud and Things</span>
+          <h3>Government IT Competitive Intelligence</h3>
+          <p>Researched the New York State government IT consulting landscape and built competitive battlecards on seven rival firms for leadership's meeting prep. The analysis surfaced a gap in the firm's contract vehicles worth pursuing.</p>
+          <div class="stack">Market research · Competitor profiling · Executive briefing</div>
+          <div class="links">
+            <span class="note">Client-confidential; summary available on request</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="type">Internship · Cloud and Things</span>
+          <h3>RFP Bid Analysis Reports</h3>
+          <p>Produced formatted bid/no-bid analysis reports for three public-sector procurements, including Salesforce CRM projects for a regional transit authority and NYS DFS, and an Empire State Development portal redesign.</p>
+          <div class="stack">Procurement analysis · Requirements mapping · Report design</div>
+          <div class="links">
+            <span class="note">Client-confidential; summary available on request</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="type">Leadership · Founder</span>
+          <h3>Youth Gujarati Samaj</h3>
+          <p>Founded a cultural youth organization that brings young people together around Gujarati heritage, community events, and mentorship, handling everything from recruiting members to planning programming.</p>
+          <div class="stack">Organization building · Event planning · Community outreach</div>
+          <div class="links">
+            <a href="#contact">Ask me about it →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <span class="num" style="font-family:'Fraunces',serif;color:var(--accent);">03</span>
+      <h2>Let's connect</h2>
+      <p>Open to internships in finance, real estate, and business development.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:YOUR-EMAIL@scarletmail.rutgers.edu">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Rishi · Built with HTML &amp; CSS, hosted on GitHub Pages</footer>
+
+</body>
+</html>
