@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishi | Finance & Business Development</title>
-  <meta name="description" content="Portfolio of Rishi, Finance student at Rutgers Business School concentrating in Real Estate.">
+  <title>Rishi Patel | Finance & Business Development</title>
+  <meta name="description" content="Portfolio of Rishi Patel, Finance student at Rutgers Business School concentrating in Real Estate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -48,14 +48,20 @@
     nav ul a:hover { color: var(--accent); }
 
     /* HERO */
-    .hero { padding: 110px 0 90px; }
+    .hero { padding: 100px 0 90px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 280px; gap: 56px; align-items: center; }
+    .headshot {
+      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%;
+      border: 6px solid var(--card);
+      box-shadow: 0 0 0 2px var(--accent), 0 20px 40px rgba(20, 33, 61, 0.15);
+    }
     .eyebrow {
       display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
     }
     .hero h1 {
       font-family: "Fraunces", serif; font-weight: 500;
-      font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.18; max-width: 880px;
+      font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.18;
     }
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero-meta { margin-top: 28px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.95rem; }
@@ -110,11 +116,15 @@
     .contact .btns { justify-content: center; }
     footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
 
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .headshot { width: 180px; order: -1; }
+    }
     @media (max-width: 640px) {
       body { font-size: 16px; }
       nav ul { gap: 16px; }
       nav ul li.hide-sm { display: none; }
-      .hero { padding: 70px 0 60px; }
+      .hero { padding: 50px 0 60px; }
       section { padding: 60px 0; }
     }
   </style>
@@ -123,7 +133,7 @@
 
   <nav>
     <div class="wrap">
-      <a href="#top" class="logo">Rishi<span>.</span></a>
+      <a href="#top" class="logo">Rishi Patel<span>.</span></a>
       <ul>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -134,18 +144,21 @@
 
   <!-- PERSONAL STATEMENT -->
   <header class="hero" id="top">
-    <div class="wrap">
-      <span class="eyebrow">Personal Statement</span>
-      <h1>I'm a Rutgers Business School finance student concentrating in real estate who pairs <em>hands-on business development experience</em> with a builder's instinct for AI-powered tools.</h1>
-      <div class="hero-meta">
-        <span>📍 Albany, NY &amp; New Brunswick, NJ</span>
-        <span>🎓 B.S. Finance, Real Estate Concentration</span>
-        <span>💼 BD Intern, Cloud and Things</span>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Personal Statement</span>
+        <h1>I'm a Rutgers Business School finance student concentrating in real estate who pairs <em>hands-on business development experience</em> with a builder's instinct for AI-powered tools.</h1>
+        <div class="hero-meta">
+          <span>📍 Albany, NY &amp; New Brunswick, NJ</span>
+          <span>🎓 B.S. Finance, Real Estate Concentration</span>
+          <span>💼 BD Intern, Cloud and Things</span>
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
       </div>
-      <div class="btns">
-        <a class="btn primary" href="#projects">View my work</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
+      <img class="headshot" src="headshot.jpeg" alt="Headshot of Rishi Patel">
     </div>
   </header>
 
@@ -220,8 +233,7 @@
           <p>An AI-powered goal-coaching app that turns long-term goals into daily activities. It calibrates difficulty to the user and keeps them motivated with a track-and-field theme: distance milestones, medals, and streaks.</p>
           <div class="stack">React · Vite · Vercel serverless proxy · LLM API</div>
           <div class="links">
-            <a href="https://GROUNDWORK-LIVE-URL" target="_blank" rel="noopener">Live demo →</a>
-            <a href="https://github.com/YOUR-USERNAME/groundwork" target="_blank" rel="noopener">Code →</a>
+            <span class="note">Demo available on request</span>
           </div>
         </article>
 
@@ -266,14 +278,14 @@
       <h2>Let's connect</h2>
       <p>Open to internships in finance, real estate, and business development.</p>
       <div class="btns">
-        <a class="btn primary" href="mailto:YOUR-EMAIL@scarletmail.rutgers.edu">Email me</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn primary" href="mailto:Rishi.s.patel@rutgers.edu">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/ru-rishi-patel" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/Rishi-Patel-ru" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
 
-  <footer>© 2026 Rishi · Built with HTML &amp; CSS, hosted on GitHub Pages</footer>
+  <footer>© 2026 Rishi Patel · Built with HTML &amp; CSS, hosted on GitHub Pages</footer>
 
 </body>
 </html>
